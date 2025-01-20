@@ -94,7 +94,7 @@ class SistemaVeterinaria:
         opc = input('seleccione una opcion')
 
         if opc == '1':
-            registrar_cliente
+            registrarCliente
         if opc == '2':
             pass
         if opc == '3':
