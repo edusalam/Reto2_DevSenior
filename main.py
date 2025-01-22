@@ -9,19 +9,16 @@ class SistemaVeterinaria:
     class Persona:
         id_conter = 1
         def __init__(self, nombre, contacto):
-            self.id = SistemaVeterinaria.Persona.id_counter
-           
+            self.id = SistemaVeterinaria.Persona.id_counter           
             self.nombre = nombre
             self.contacto = contacto
-
             SistemaVeterinaria.Persona.id_counter += 1
 
     class Cliente(Persona):
         def __init__(self, nombre, contacto, direccion):
             super().__init__(nombre, contacto)
             self.direccion = direccion
-            self.mascota = []
-       
+            self.mascota = []  
 
     class Mascota:
         id_counter = 1
@@ -33,9 +30,9 @@ class SistemaVeterinaria:
             self.edad = edad
             self.historia_clinico = []
         def agregar_mascota(self, mascota):
-             self.mascota.append()
+            self.mascota.append()
             
-             self.id = SistemaVeterinaria.mmascota.id_counter += 1
+            self.id = SistemaVeterinaria.mascota.id_counter += 1
 
     class Citas:
         id_counter = 1
