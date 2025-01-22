@@ -3,14 +3,11 @@
 #variables:
 Clientes = []
 
-
 class SistemaVeterinaria:
     pass
 
     class Persona:
-         
-         id_conter = 1
-
+        id_conter = 1
         def __init__(self, nombre, contacto):
             self.id = SistemaVeterinaria.Persona.id_counter
            
