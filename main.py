@@ -78,25 +78,30 @@ class SistemaVeterinaria:
 #menu principal
 
     def menu_principal():
-        print('==================Menu Principal============')
-        print('1. Registrar cliente')
-        print('2. Registrar mascota')
-        print('1. programar cita')
-        print('1. Consultar historial')
-        print('1. Salir')
+        while True:
+            print('==================Menu Principal============')
+            print('1. Registrar cliente')
+            print('2. Registrar mascota')
+            print('1. programar cita')
+            print('1. Consultar historial')
+            print('1. Salir')        
                
-        opc = input('seleccione una opcion')
+            opc = input('seleccione una opcion:')
 
-        if opc == '1':
-            registrarCliente
-        if opc == '2':
+            if opc == '1':
+                registrarCliente()             
+            elif opc == '2':
+                pass
+            
+            elif opc == '3':
+                pass
+            
+            if opc == '4':
             pass
-        if opc == '3':
-            pass
-        if opc == '4':
-            pass
-        else:
+            else:
             print('opcion no valida')
+
+        
         
         
 
