@@ -50,7 +50,7 @@ def registrar_Cliente():
         contacto = input('ingrese contacto del cliente: ')
         direccion = input('ingrese direccion del cliente: ')
         cliente = SistemaVeterinaria.Cliente(nombre, contacto, direccion) 
-        cliente.agregar_mascota(Mascota)     
+        cliente.agregar_mascota(mascota)     
         clientes.append(cliente)
         print('cliente agregado con exito')   
 
@@ -98,7 +98,7 @@ def menu_principal():
                 registrar_mascota()
             
             elif opc == '3':
-                programar_CITA
+                programar_CITA()
             
             elif opc == '4':
                 break
