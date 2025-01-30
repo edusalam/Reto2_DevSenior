@@ -17,10 +17,10 @@ class SistemaVeterinaria:
         def __init__(self, nombre, contacto, direccion):
             super().__init__(nombre, contacto)
             self.direccion = direccion
-            self.mascota = [] 
+            self.mascotas = [] 
 
         def agregar_mascota(self, mascota):
-            self.mascota.append(mascota) 
+            self.mascotas.append(mascota) 
 
     class Mascota:
         id_counter = 1
@@ -49,7 +49,8 @@ def registrar_Cliente():
         nombre = input('ingrese nombre del cliente: ')
         contacto = input('ingrese contacto del cliente: ')
         direccion = input('ingrese direccion del cliente: ')
-        cliente = SistemaVeterinaria.Cliente(nombre, contacto, direccion)      
+        cliente = SistemaVeterinaria.Cliente(nombre, contacto, direccion) 
+        cliente.agregar_mascota(Mascota)     
         clientes.append(cliente)
         print('cliente agregado con exito')   
 
@@ -63,14 +64,19 @@ def registrar_mascota():
     mascota.agregar_mascota(mascota)
 
 def programar_CITA():
-        cliente_id = int(input('ingrese el id del cliente: '))
-        cliente = next((c for c in clientes if c.id == cliente_id), None)
-
-        if not clientes:
+    print('===========Programar Cita==============')
+    cliente_id = int(input('ingrese el id del cliente: '))
+    cliente = next((c for c in clientes if c.id == cliente_id), None)
+    if not cliente:
             print('cliente no encontrado')
             return
-        mascota_id = int(input('ingrese el id del cliente: '))
-        mascotas = next((c for c in cliente.mascotas if c.id == cliente_id), None)
+    mascota_id = int(input('ingrese el id del cliente: '))
+    mascota = next((m for m in cliente.mascotas if m.id == mascota_id), None)
+
+    if not mascota:
+        print('mascota no encontrado')
+        return
+    print('Cita agendada')
 
 def consutlar_historial():
         pass
@@ -92,10 +98,10 @@ def menu_principal():
                 registrar_mascota()
             
             elif opc == '3':
-                pass
+                programar_CITA
             
-            if opc == '4':
-                pass
+            elif opc == '4':
+                break
 
             else:
                 print('opcion no valida')            
