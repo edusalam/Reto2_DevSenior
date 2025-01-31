@@ -1,12 +1,14 @@
 #DESARROLLO RETO 2
 #LO PRIMERO ES CREAR LAS CLASES PRINCIPALES
-clientes = [] #VARIABLE GLOBAL:
+
+#variable:
+Clientes = []
 
 class SistemaVeterinaria:
     pass
-    class Persona:
-        id_conter = 1 #CONTADOR ES AUTOMATICAMENTE AUTOINCREMENTABLE
 
+    class Persona:
+        id_conter = 1
         def __init__(self, nombre, contacto):
             self.id = SistemaVeterinaria.Persona.id_counter           
             self.nombre = nombre
@@ -17,68 +19,62 @@ class SistemaVeterinaria:
         def __init__(self, nombre, contacto, direccion):
             super().__init__(nombre, contacto)
             self.direccion = direccion
-            self.mascotas = [] 
-
-        def agregar_mascota(self, mascota):
-            self.mascotas.append(mascota) 
+            self.mascota = []  
 
     class Mascota:
         id_counter = 1
         def __init__(self, nombre, especie, raza, edad):
-            self.id = SistemaVeterinaria.mascota.id_counter
+            self.id = SistemaVeterinaria.mmascota.id_counter
             self.nombre = nombre
             self.especie = especie
             self.raza = raza
             self.edad = edad
             self.historia_clinico = []
-            SistemaVeterinaria.Persona.id_counter += 1               
+        def agregar_mascota(self, mascota):
+            self.mascota.append()
+            
+            self.id = SistemaVeterinaria.mascota.id_counter += 1
 
     class Citas:
         id_counter = 1
-        def __init__(self, fecha, hora, servicio, veterinario):
+        def __init__(self, fecha, hora, sercicio, veterinario):
             self.id = SistemaVeterinaria.Citas.id_counter
             self.fecha = fecha
             self.hosra = hora
-            self.servicio = servicio
-            self.veterinario = veterinario
-            SistemaVeterinaria.Citas.id_counnter += 1
 
-#CREAMOS POR FUERA LOS METODOS O FUNCINES DEL SISTEMA VETERINARIO
-def registrar_Cliente():
-        print('===========REGISTRO DEL CLIENTE==========')
+            SistemaVeterinaria.Citas-id_counnter += 1
+
+    def registrarCliente():
+        print('===========Registro Del Cliente==========')
         nombre = input('ingrese nombre del cliente: ')
-        contacto = input('ingrese contacto del cliente: ')
-        direccion = input('ingrese direccion del cliente: ')
-        cliente = SistemaVeterinaria.Cliente(nombre, contacto, direccion) 
-        cliente.agregar_mascota(mascota)     
-        clientes.append(cliente)
-        print('cliente agregado con exito')   
+        contacto = input('ingrese contacto del cliente')
+        direccion = input('ingrese direccion del cliente')
 
-def registrar_mascota():
-    print('==========REGISTRO DE MASCOTA==========')
-    nombre_mascota = input('Nombre de la mascota: ')
-    especie = input('Especie de la mascota: ')
-    raza = input('Raza de la mascota: ')
-    edad = input('Ingrese edad: ')
-    mascota = SistemaVeterinaria.Mascota(nombre_mascota,especie, raza, edad)
-    mascota.agregar_mascota(mascota)
+        cliente = SistemaVeterinaria.clie(nonbre, contacto, direccion)
 
-def programar_CITA():
-    print('===========Programar Cita==============')
-    cliente_id = int(input('ingrese el id del cliente: '))
-    cliente = next((c for c in clientes if c.id == cliente_id), None)
-    if not cliente:
+        print('======registro mascota====')
+        nombre_mascota = input('nombree de la mascota')
+        especie = input('especie de la mascota')
+        raza = input('raza de la mascota')
+        edad = input('ingrese edad')
+        mascota = SistemaVeterinaria.Mascota(nombre_mascota,especie, raza)
+
+        cliente.agregar_mascota(mascota)
+
+        Clientes.append(cliente)
+        print('cliente y mascota agregado con exito')    
+
+    def programar_CITA():
+        cliente_id = int(input('ingrese el id del cliente: '))
+        cliente = next((c for c in clientes if c.id == cliente_id), None)
+
+        if not clientes:
             print('cliente no encontrado')
             return
-    mascota_id = int(input('ingrese el id del cliente: '))
-    mascota = next((m for m in cliente.mascotas if m.id == mascota_id), None)
+        mascota_id = int(input('ingrese el id del cliente: '))
+        mascotas = next((c for c in cliente.mascotas if c.id == cliente_id), None)
 
-    if not mascota:
-        print('mascota no encontrado')
-        return
-    print('Cita agendada')
-
-def consutlar_historial():
+    def consutlar_historial():
         pass
 
 #menu principal
@@ -92,21 +88,18 @@ def menu_principal():
             print('5. Salir\n')
             opc = input('seleccione una opcion: ')
 
-            if opc == '1':
-                registrar_Cliente()             
-            elif opc == '2':
-                registrar_mascota()
-            
-            elif opc == '3':
-                programar_CITA()
-            
-            elif opc == '4':
-                break
-
-            else:
-                print('opcion no valida')            
-
-menu_principal()        
+        if opc == '1':
+            registrarCliente
+        if opc == '2':
+            pass
+        if opc == '3':
+            pass
+        if opc == '4':
+            pass
+        else:
+            print('opcion no valida')    
+ 
+    menu_principal()
 
     
 
