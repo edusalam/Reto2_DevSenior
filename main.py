@@ -53,8 +53,9 @@ def validar_fecha(fecha):
     try:
         datetime.strptime(fecha,'%d-%d-%Y')
         return True
-    except ValueError
-    return False
+    except ValueError:
+        return False
+      
 
 #CREAMOS POR FUERA LOS METODOS O FUNCINES DEL SISTEMA VETERINARIO
 def registrar_Cliente():
@@ -98,7 +99,8 @@ def programar_cita():
         return
     fecha = input('ingrese la fecha de la cita(DD-MM-YYYY):')
     while not validar_fecha(fecha):
-        pass
+        print('fecha invalida, por favor use el formato DD-MM-YYYY ')
+        fecha = input('ingrese la fecha de la cita(DD-MM-YYYY):')
     hora = input('ingrese la hora del cita (HH:MM)')
     servicio = input('ingrese el servicio(consultorio, vacunacion, etc,):')
     veterinario = input('ingrese el nombre del veterinario')
