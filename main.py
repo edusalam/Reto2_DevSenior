@@ -139,8 +139,7 @@ def menu_principal():
                 print('opcion no valida')            
 
 menu_principal()        
-
-#creada con exito, la rama
+#rama creada con exito 28/02/2025
 
     
 
