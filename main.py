@@ -26,7 +26,7 @@ class SistemaVeterinaria:
     class Mascota:
         id_counter = 1
         def __init__(self, nombre, especie, raza, edad):
-            self.id = SistemaVeterinaria.mascota.id_counter
+            SistemaVeterinaria.mascota.id_counter += 1
             self.nombre = nombre
             self.especie = especie
             self.raza = raza
@@ -43,7 +43,7 @@ class SistemaVeterinaria:
         def __init__(self, fecha, hora, servicio, veterinario):
             self.id = SistemaVeterinaria.Citas.id_counter
             self.fecha = fecha
-            self.hosra = hora
+            self.hora = hora
             self.servicio = servicio
             self.veterinario = veterinario
             SistemaVeterinaria.Citas.id_counter += 1
@@ -77,8 +77,9 @@ def registrar_mascota():
     nombre_mascota = input('Nombre de la mascota: ')
     especie = input('Especie de la mascota: ')
     raza = input('Raza de la mascota: ')
-    edad = input('Ingrese edad: ')
+    edad = input('Ingrese edad de la mascota: ')
     mascota = SistemaVeterinaria.Mascota(nombre_mascota,especie, raza, edad)
+
     cliente.agregar_mascota(mascota)
     mascotas.append(mascota)
     print(f'mascota registrada con exito, ID: {mascota.id}')
