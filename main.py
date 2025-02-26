@@ -142,7 +142,7 @@ def menu_principal():
             print('2. Registrar mascota')
             print('3. programar cita')
             print('4. Consultar historial')
-            print('5. Salir\n')
+            print('5. Saliendo del sistema\n')
             opc = input('seleccione una opcion: ')
 
             if opc == '1':
@@ -157,6 +157,7 @@ def menu_principal():
                 consultar_historial()
 
             elif opc == '5':
+                print('Saliendo del sistema.')
                 break
 
             else:
