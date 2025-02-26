@@ -2,7 +2,6 @@
 #LO PRIMERO ES CREAR LAS CLASES PRINCIPALES
 clientes = [] #VARIABLE GLOBAL:
 mascotas = []
-
 class SistemaVeterinaria:
     
     class Persona:
